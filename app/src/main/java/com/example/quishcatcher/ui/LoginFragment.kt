@@ -94,7 +94,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     pref[Constants.SharedPref.TOKEN] = response.body()?.token
                     pref[Constants.SharedPref.IS_LOGIN] = true
                     pref[Constants.SharedPref.USER_PROFILE] = gson.toJson(response.body()?.user)
-                    pref[Constants.SharedPref.USER_NAME] = gson.toJson(response.body()?.user?.name)
+                    pref[Constants.SharedPref.USER_NAME] = gson.toJson(response.body()?.user?.name ?: "")
                     Navigation.findNavController(binding.root)
                         .navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
                     Toasty.success(

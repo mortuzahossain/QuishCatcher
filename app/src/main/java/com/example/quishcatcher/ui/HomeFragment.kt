@@ -29,7 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         pref = SessionManager.sessionPrefs(requireContext())
 
         val name = pref[Constants.SharedPref.USER_NAME, ""]
-        binding.tvName.text = "${getGreetingMessage()}\n$name"
+        binding.tvName.text = "${getGreetingMessage()}\n${name?.replace("\"","")}"
 
         binding.imgLogout.setOnClickListener {
             logout()

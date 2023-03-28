@@ -4,7 +4,7 @@ object Constants {
     var browsableUrl: String = ""
 
     object API {
-        const val URL = "http://cryptosham.co.uk.awning.my/api/"
+        const val URL = "https://quishcatcher.com/"
     }
 
     object SharedPref {

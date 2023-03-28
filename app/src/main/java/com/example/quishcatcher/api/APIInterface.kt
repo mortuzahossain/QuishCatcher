@@ -9,26 +9,26 @@ import retrofit2.http.POST
 interface APIInterface {
 
     @Headers("Content-Type: application/json")
-    @POST("/login")
+    @POST("api/login")
     fun login(
         @Body payload: LoginRequest,
     ): Call<LoginResponse>
 
     @Headers("Content-Type: application/json")
-    @POST("/register")
+    @POST("api/register")
     fun register(
         @Body payload: RegistrationRequest,
     ): Call<LoginResponse>
 
     @Headers("Content-Type: application/json")
-    @POST("/forget-password")
+    @POST("api/forget-password")
     fun forgetPassword(
         @Body payload: ForgetPasswordRequest,
     ): Call<ForgetPasswordResponse>
 
 
     @Headers("Content-Type: application/json")
-    @POST("/forget-password")
+    @POST("/scan")
     fun scanUrl(
         @Body payload: ScanUrlRequest,
     ): Call<ScanResponse>
