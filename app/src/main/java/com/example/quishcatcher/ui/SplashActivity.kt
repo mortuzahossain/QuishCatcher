@@ -1,4 +1,4 @@
-package com.example.quishcatcher
+package com.example.quishcatcher.ui
 
 import android.Manifest
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
-import com.example.quishcatcher.ui.MainActivity
+import com.example.quishcatcher.R
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken

@@ -20,7 +20,7 @@
         android:theme="@style/Theme.QuishCatcher"
         tools:targetApi="31">
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
