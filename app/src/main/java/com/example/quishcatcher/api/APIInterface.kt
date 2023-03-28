@@ -8,16 +8,30 @@ import retrofit2.http.POST
 
 interface APIInterface {
 
-//    @Headers("Content-Type: application/json")
-//    @POST("/api/index.php")
-//    fun getInit(
-//        @Body payload: ApiRequest,
-//    ): Call<ConfigResponse>
-//
-//    @Headers("Content-Type: application/json")
-//    @POST("/api/index.php")
-//    fun getMenus(
-//        @Body payload: ApiRequest,
-//    ): Call<MenuResponse>
+    @Headers("Content-Type: application/json")
+    @POST("/login")
+    fun login(
+        @Body payload: LoginRequest,
+    ): Call<LoginResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("/register")
+    fun register(
+        @Body payload: RegistrationRequest,
+    ): Call<LoginResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("/forget-password")
+    fun forgetPassword(
+        @Body payload: ForgetPasswordRequest,
+    ): Call<ForgetPasswordResponse>
+
+
+    @Headers("Content-Type: application/json")
+    @POST("/forget-password")
+    fun scanUrl(
+        @Body payload: ScanUrlRequest,
+    ): Call<ScanResponse>
+
 
 }
