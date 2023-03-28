@@ -6,6 +6,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatTextView
+import com.example.quishcatcher.ui.BrowserActivity
 
 
 fun showAlertDialog(context: Context, title: String, message: String, isSuccess: Boolean) {
@@ -17,6 +18,7 @@ fun showAlertDialog(context: Context, title: String, message: String, isSuccess:
 
     val ivIcon = dialog.findViewById<ImageView>(R.id.ivIcon)
     val btn = dialog.findViewById<Button>(R.id.btnOk)
+    val btnCancel = dialog.findViewById<Button>(R.id.btnCancel)
     val tvContent = dialog.findViewById<AppCompatTextView>(R.id.tvContent)
     val tvContentTitle = dialog.findViewById<AppCompatTextView>(R.id.tvContentTitle)
 
@@ -31,7 +33,13 @@ fun showAlertDialog(context: Context, title: String, message: String, isSuccess:
 
     btn.setOnClickListener {
         dialog.dismiss()
+        BrowserActivity.openBrowserActivity(context)
     }
+
+    btnCancel.setOnClickListener {
+        dialog.dismiss()
+    }
+
 
     dialog.show()
 }

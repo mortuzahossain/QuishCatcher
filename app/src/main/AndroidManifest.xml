@@ -31,6 +31,9 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.BrowserActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

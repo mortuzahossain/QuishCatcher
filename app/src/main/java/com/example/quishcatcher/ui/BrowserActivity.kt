@@ -2,6 +2,7 @@ package com.example.quishcatcher.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,7 +18,7 @@ import com.example.quishcatcher.databinding.ActivityBrowserBinding
 class BrowserActivity : AppCompatActivity() {
 
     companion object {
-        fun openBrowserActivity(activity: Activity) {
+        fun openBrowserActivity(activity: Context) {
             val intent = Intent(activity, BrowserActivity::class.java)
             activity.startActivity(intent)
         }
@@ -66,10 +67,10 @@ class BrowserActivity : AppCompatActivity() {
                 override fun onProgressChanged(view: WebView, progress: Int) {
                     binding.progressBar.visibility = View.VISIBLE
                     binding.progressBar.progress = progress * 100
-                    binding.tvTitle.text = binding.webView.title
                     if (progress == 100) {
                         binding.progressBar.visibility = View.GONE
                         binding.swipeRefresh.isRefreshing = false
+                        binding.tvTitle.text = binding.webView.title
                     }
                 }
             }
