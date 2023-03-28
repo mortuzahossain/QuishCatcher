@@ -1,10 +1,40 @@
 package com.example.quishcatcher.ui
 
+import android.content.SharedPreferences
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.quishcatcher.R
+import com.example.quishcatcher.SessionManager
+import com.example.quishcatcher.SessionManager.get
+import com.example.quishcatcher.SessionManager.set
+import com.example.quishcatcher.api.Constants
+import com.example.quishcatcher.databinding.FragmentHomeBinding
+import com.example.quishcatcher.getGreetingMessage
+import com.google.gson.Gson
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
+
+    lateinit var binding: FragmentHomeBinding
+
+    lateinit var pref: SharedPreferences
+    val gson = Gson()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentHomeBinding.bind(view)
+        pref = SessionManager.sessionPrefs(requireContext())
+
+        val name = pref[Constants.SharedPref.USER_NAME, ""]
+        binding.tvName.text = "${getGreetingMessage()}\n$name"
+
+        binding.imgLogout.setOnClickListener {
+            logout()
+        }
+    }
 
     private fun logout() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
@@ -19,6 +49,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun performLogout() {
-
+        pref[Constants.SharedPref.IS_LOGIN] = false
+        pref[Constants.SharedPref.USER_NAME] = null
+        pref[Constants.SharedPref.USER_PROFILE] = null
+        requireActivity().finish()
     }
 }
