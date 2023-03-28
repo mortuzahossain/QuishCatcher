@@ -28,10 +28,17 @@ interface APIInterface {
 
 
     @Headers("Content-Type: application/json")
-    @POST("/scan")
+    @POST("api/scan")
     fun scanUrl(
         @Body payload: ScanUrlRequest,
+        @Header("Authorization") auth: String
     ): Call<ScanResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("api/logout")
+    fun logout(
+        @Header("Authorization") auth: String
+    ): Call<LogoutResponse>
 
 
 }

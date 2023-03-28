@@ -28,10 +28,16 @@ data class ForgetPasswordResponse (
 
 )
 
-
 data class ScanResponse (
 
     @SerializedName("isSafe"  ) var isSafe  : Boolean? = null,
     @SerializedName("message" ) var message : String?  = null
+
+)
+
+
+data class LogoutResponse (
+
+    @SerializedName("message" ) var message : String? = null
 
 )

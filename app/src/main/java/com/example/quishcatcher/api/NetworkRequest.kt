@@ -17,6 +17,10 @@ data class ForgetPasswordRequest (
     @SerializedName("email"    ) var email    : String? = null
 )
 
+data class LogoutRequest (
+    @SerializedName("token"    ) var token    : String? = null
+)
+
 data class ScanUrlRequest (
     @SerializedName("url"      ) var url      : String? = null
 )

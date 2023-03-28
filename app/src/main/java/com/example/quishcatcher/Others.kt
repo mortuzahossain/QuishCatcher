@@ -28,6 +28,7 @@ fun String.base64ToString() = Base64.decode(this, Base64.DEFAULT).toString(Chars
 
 fun String.stringToBase64() = Base64.encodeToString(this.toByteArray(), Base64.DEFAULT)
 
+fun String.makeToken() = "Bearer $this"
 
 fun getGreetingMessage(): String {
     return when (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
