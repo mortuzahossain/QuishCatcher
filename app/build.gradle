@@ -59,4 +59,10 @@ dependencies {
 
     implementation "com.intuit.sdp:sdp-android:$intuit"
     implementation "com.intuit.ssp:ssp-android:$intuit"
+
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    implementation 'com.karumi:dexter:6.2.1'
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
+
 }
