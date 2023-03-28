@@ -23,15 +23,26 @@
             android:src="@drawable/logo" />
 
         <TextView
+            android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_weight="8"
+            android:layout_weight="7"
             android:padding="@dimen/_6sdp"
             android:text="Welcome\nAdmin"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp" />
+
+
+        <ImageView
+            android:id="@+id/imgLogout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="@dimen/_5ssp"
+            android:src="@drawable/logout" />
 
     </LinearLayout>
 

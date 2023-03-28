@@ -8,15 +8,15 @@
         android:id="@+id/loginFragment"
         android:name="com.example.quishcatcher.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_registrationFragment2"
+            android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
         <action
             android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
             app:destination="@id/forgetPasswordFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment2"
+            android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
@@ -33,9 +33,9 @@
         android:id="@+id/homeFragment"
         android:name="com.example.quishcatcher.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_detailsFragment2"
+            android:id="@+id/action_homeFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
